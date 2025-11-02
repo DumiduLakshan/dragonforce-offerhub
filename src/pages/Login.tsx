@@ -63,24 +63,24 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary to-background p-4 sm:p-6">
       <div className="w-full max-w-md fade-in">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
+        <div className="text-center mb-6 sm:mb-8 px-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
             DragonForce
           </h1>
-          <p className="text-muted-foreground">Powering Unlimited Internet Deals</p>
+          <p className="text-sm sm:text-base text-muted-foreground">Powering Unlimited Internet Deals</p>
         </div>
 
         <Card className={`shadow-strong border-2 ${error ? 'shake border-destructive' : ''}`}>
-          <CardHeader>
-            <CardTitle>Welcome Back</CardTitle>
-            <CardDescription>Sign in to access exclusive offers</CardDescription>
+          <CardHeader className="px-4 sm:px-6 pt-4 sm:pt-6">
+            <CardTitle className="text-xl sm:text-2xl">Welcome Back</CardTitle>
+            <CardDescription className="text-sm sm:text-base">Sign in to access exclusive offers</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6">
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email" className="text-sm sm:text-base">Email</Label>
                 <Input
                   id="email"
                   type="email"
@@ -89,12 +89,12 @@ const Login = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   disabled={loading}
-                  className="transition-all"
+                  className="transition-all h-11 sm:h-12 text-base"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password" className="text-sm sm:text-base">Password</Label>
                 <Input
                   id="password"
                   type="password"
@@ -103,13 +103,13 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={loading}
-                  className="transition-all"
+                  className="transition-all h-11 sm:h-12 text-base"
                 />
               </div>
 
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-primary hover:opacity-90 transition-all"
+                className="w-full bg-gradient-primary hover:opacity-90 transition-all h-11 sm:h-12 text-base sm:text-lg font-medium"
                 disabled={loading}
               >
                 {loading ? "Signing in..." : "Sign In"}
@@ -118,7 +118,7 @@ const Login = () => {
           </CardContent>
         </Card>
 
-        <p className="text-center text-sm text-muted-foreground mt-4">
+        <p className="text-center text-xs sm:text-sm text-muted-foreground mt-4 px-2">
           Secure login powered by advanced authentication
         </p>
       </div>
