@@ -243,34 +243,35 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary to-background">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-soft">
-        <div className="container flex h-16 items-center justify-between">
-          <div>
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+        <div className="container flex h-14 sm:h-16 items-center justify-between px-4 sm:px-6">
+          <div className="flex-1 min-w-0">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent truncate">
               DragonForce
             </h1>
-            <p className="text-xs text-muted-foreground">Powering Unlimited Internet Deals</p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground hidden xs:block">Powering Unlimited Internet Deals</p>
           </div>
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             onClick={handleLogout}
-            className="gap-2"
+            className="gap-1 sm:gap-2 ml-2 flex-shrink-0 text-xs sm:text-sm h-8 sm:h-9 px-2 sm:px-3"
           >
-            <LogOut className="h-4 w-4" />
-            Logout
+            <LogOut className="h-3 w-3 sm:h-4 sm:w-4" />
+            <span className="hidden xs:inline">Logout</span>
+            <span className="xs:hidden">Out</span>
           </Button>
         </div>
       </header>
 
-      <main className="container py-8">
-        <div className="mb-8 fade-in">
-          <h2 className="text-3xl font-bold mb-2">Exclusive Internet Offers</h2>
-          <p className="text-muted-foreground">
+      <main className="container px-4 sm:px-6 py-6 sm:py-8">
+        <div className="mb-6 sm:mb-8 fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Exclusive Internet Offers</h2>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Choose from our premium internet packages with gaming support and unlimited data
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 fade-in">
           {offers.map((offer, index) => (
             <div key={index} style={{ animationDelay: `${index * 0.1}s` }} className="fade-in">
               <OfferCard {...offer} />
@@ -279,9 +280,9 @@ const Dashboard = () => {
         </div>
       </main>
 
-      <footer className="border-t bg-background/95 backdrop-blur mt-16">
-        <div className="container py-8 text-center">
-          <p className="text-sm text-muted-foreground">
+      <footer className="border-t bg-background/95 backdrop-blur mt-12 sm:mt-16">
+        <div className="container px-4 sm:px-6 py-6 sm:py-8 text-center">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             © 2024 DragonForce. All rights reserved.
           </p>
         </div>
